@@ -64,6 +64,7 @@ cd Github
 #### Downloading Files
 3. To get started with this tutorial, we want to download the project folder found on the HGV GitHub page. to start we need to go onto GitHub in a browser and navigate to this link here:  
 https://github.com/Heather-Glen-Village/HGV-Learning-Git
+
 4. From the page you want to click on the **Big Green Code** button which will show a drop down with a link but make sure the **HTTPS option is selected** before copying it.
 ![Pasted image 20250323133233](https://github.com/user-attachments/assets/31014dba-0d82-4e10-90cc-cf234543805b)
 
@@ -78,6 +79,7 @@ cd <Name of Folder>
 ```
 #### Swapping Branch
 Currently we only have the main branch downloaded which would be fine if we want to use the code but if we want to edit the code, we will want to be on the Feature Branch.
+
 6. Check all, already made branches on GitHub by running: 
 ```bash
 git branch -a
@@ -122,6 +124,7 @@ print("My-Name")
 ```
 #### Saving and Uploading your Code
 When you are done adding what you to the Python file, you save it but that doesn't save it to Git. 
+
 10. For Git we need to check what files need to be save by running to show all un stage and stage file in Git.
 ```bash
 git status
@@ -145,11 +148,15 @@ git push
 ```
 #### Merging Branches Together
 This step is only done when you are fully done using the branch you created due to the feature being completed. When a branch is done it can first be merge onto the dev branch and after a while, we have 100% clean working code, we merge dev into main.
+
 14. To start this, go onto GitHub and the Branches Page. There should be a Notification saying there has been a recent push and asking if you want to make a pull request. You want to click that green pull request button to enter the pull request page
 ![Pasted image 20250323143545](https://github.com/user-attachments/assets/e190b8a8-78cb-4d41-9b04-a6cb704e1d08)
+
 15. On this page you will document the changes you have made and tell GitHub to merge your branch into dev first. You can also fill out the labels and people you want to look at as well as the people that worked on the branch
 ![Pasted image 20250323143957](https://github.com/user-attachments/assets/4ec2e8a2-bd5f-4a9b-a982-afdbc356ee0c)
+
 16. When your done filling it out you can click the create pull request and if nothing goes wrong, on the next page you can merge the request yourself.
+
 17. After both branch have merge you can remove your old branch on GitHub by Clicking the Delete Branch Button on GitHub and running this command locally
 ```bash
 git branch -d <Name-of-Branch>
@@ -172,7 +179,9 @@ git pull
 To download any changed made as long as you don't have non saved files and they don't your conflict
 ##### Going back to Older Commits
 There are a few ways to do this but the way I would recommend is first find the commit you wish to go back to on GitHub by clicking the commits button on the page
+
 ![Pasted image 20250323145311](https://github.com/user-attachments/assets/7f5a2a56-71a6-476e-aa31-f8fc64563edb)
+
 From here there is a list of all commits made, and each have a hash related to them (They look like this 62c4319). When you find the commit, you want to go back to copy its hash then in the Terminal you can either make a new branch with that old code with this:
 ```bash
 git checkout <hash>
@@ -208,6 +217,7 @@ Ctrl+k+o
 #### Downloading Files
 2. To get started with this tutorial, we want to download the project folder found on the HGV GitHub page. to start we need to go onto GitHub in a browser and navigate to this link here:  
 https://github.com/Heather-Glen-Village/HGV-Learning-Git
+
 3. From the page you want to click on the **Big Green Code** button which will show a drop down with a link but make sure the **HTTPS option is selected** before copying it.
 ![Pasted image 20250323133233](https://github.com/user-attachments/assets/ce9c8854-832e-42bd-a853-6e2d4f4083c2)
 
@@ -222,6 +232,7 @@ git clone https://your.copy.link.here.com
 ```
 #### Swapping Branch
 Currently we only have the main branch downloaded which would be fine if we want to use the code but if we want to edit the code, we will want to be on the Feature Branch.
+
 6. First to See all the Branches go to the **bottom left** of the app and click on the Branch Icon
 ![Pasted image 20250323152743](https://github.com/user-attachments/assets/7c4db68b-3497-4779-a19a-0ac540ed7c65)
 - This shows all branches that are made with the ones with origin in first being ones from GitHub and the one being display next to the icon being the one we are on.
@@ -244,28 +255,35 @@ print("My-Name")
 
 #### Saving and Uploading your Code
 When you are done adding what you to the Python file, you save it but that doesn't save it to Git. 
+
 10. For Git we need to check what files need to be save by running to show all un staged and staged file in Git which can be found listed on the Git Tab on the left
 ![Pasted image 20250323153537](https://github.com/user-attachments/assets/f309187e-40ce-4dd2-9f3b-5fa9766ed4d0)
 
 11. To add a file to be save you want to click the stage changes button next to the file or the stage all changes button next to the changes tab
 
 12. Then to take these staged files and save them you want to write a message explaining what changes you have made then press the Commit Button
+
 ![Pasted image 20250323153721](https://github.com/user-attachments/assets/89fe9305-7d8a-43d0-919f-a531e898f2bd)
 
 13. This will save all change you made so far locally but we also want to update the code on GitHub and that can be done by pressing the Push Button where the Commit one used to be
 ![Pasted image 20250323153820](https://github.com/user-attachments/assets/0a90fcd0-1289-47ac-8d2c-492d40cd2fe8)
 #### Merging Branches Together
 This step is only done when you are fully done using the branch you created due to the feature being completed. When a branch is done it can first be merge onto the dev branch and after a while, we have 100% clean working code, we merge dev into main.
+
 14. To start this, go onto GitHub and the Branches Page. There should be a Notification saying there has been a recent push and asking if you want to make a pull request. You want to click that green pull request button to enter the pull request page
 ![Pasted image 20250323143545](https://github.com/user-attachments/assets/e207e2ac-b195-4f4f-b2a5-1949579348fe)
+
 15. On this page you will document the changes you have made and tell GitHub to merge your branch into dev first. You can also fill out the labels and people you want to look at as well as the people that worked on the branch
 ![Pasted image 20250323143957](https://github.com/user-attachments/assets/efc75358-99a6-4b8e-a6ee-cf78cfd70057)
+
 16. When your done filling it out you can click the create pull request and if nothing goes wrong, on the next page you can merge the request yourself.
+
 17.  After both branch have merge you can remove your old branch on GitHub by Clicking the Delete Branch Button on GitHub and running this command locally
 ```bash
 git branch -d <Name-of-Branch>
 ```
 (You can't be on the Branch you are delete so make sure to swap off it)
+
 18. Later when more features have been added you will do the same thing from dev to main but their will have been a review from someone before being added to main.
 #### Extra Things to Know
 While not needed for this guide here a few extra commands you should know while working with Git
