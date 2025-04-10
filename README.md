@@ -1,3 +1,4 @@
+# HGV Learning Git
 **Git** is a very widely used Software that when combined with **GitHub** is one of, if not the most used Software in Software Development. This Guide will explain how to use both Git and GitHub in the context of the HGV Project and its GitHub Organization and will be **split into 2 parts**. The 1st half will explain what Git and GitHub are and why we use it while the 2nd half will just guide you on how to use these tools with a step by step guide on how to use the basic function of Git using either the Terminal or VScode.
 
 ## What is Git?
