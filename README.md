@@ -50,26 +50,71 @@ https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux
 This tutorial will be split into 2 parts with each one having the same content but using the 2 different tools listed above. I would recommend looking at both of them to see which one you like to use the most or you can use a separate way not listed on tutorial if you wish.
 ### Basic Git
 Here we will only be using a Terminal and a Browser to Access GitHub
-1. To get started with the basic Git program, you start by opening a Terminal page and changing your directory to wherever you want to store your GitHub Projects. 
+#### Signing into GitHub
+Now before we start doing anything on Git, It would be a good idea to Link your GitHub account to Your Computer.
+
+1. First Before you Do anything Make Sure you Have Created a GitHub Account by Going to This Link: https://github.com/signup
+	
+ - You can also use an account you made before to sign in.
+
+2. When you have finish setup up your account contact either Zach Schultz or Ken Taylor to add you to GitHub Organization so you can start Uploading code to the Repository
+
+3.  When the Invitation is sent you should be able to accept it via an link in your email or the GitHub Inbox
+
+4. You can See if your now apart of the Organization if you see all the User in the People Tab.
+
+##### Linking your GitHub to Git
+
+Now that you have an Ready GitHub Account, you still need to link it to your computer that you are using with a Personal Access Token
+
+5.  To Get your Personal Access Token, go onto GitHub and into Setting by clicking onto your icon in the Top Right.
+
+6. From here Scroll all the way down to Developer Settings, Click it then Click Personal Access tokens and then Fine-grained tokens
+
+7. Click the Green Generate new token and create a token with the access it should give
+
+8. The Token should have a Easily understood Name like (REMS006 Token) an Expiration Date for when you stop using the device, and let it access all Repo
+
+9. Generate the token and copy it and save it until Step XX.
+
+#### Setup Git
+Lastly before we start using Git, there are some Global Config that you will want to set before using Git
+
+10. Copy and Paste this info into a Terminal  and replace <> with the right info 
+
+```bash
+git config --global user.name "<GitHub Name>" 
+git config --global user.email "<your.email@example.com>" 
+git config --global init.defaultBranch main 
+git config --global credential.helper store
+```
+- user.name link your name to changes
+- user.email link your email to changes
+- init.defaultBranch  set the name to the default Branch name to "main"
+- credential.helper store make it remember your token and not have to paste it in every time you use it.
+	- If you don't feel comfortable using these command you can swap to using a different tool or learning more by understand Basic Linux Terminal Commands, links found at the bottom of the guide
+
+#### Downloading Files
+Now that we are fully log into GitHub we can start using the Code on the Repositories.
+
+11. To get started with the basic Git program, you start by opening a Terminal page and changing your directory to wherever you want to store your GitHub Projects. 
 - For this tutorial we will presume you have a folder made in your home directory called "GitHub" made by running this command in Linux:
 ``` bash
 mkdir GitHub
 ```
-2. Then running this command to change your directory into that folder
+12. Then running this command to change your directory into that folder
 ``` bash
 cd Github
 ```
-- If you don't feel comfortable using these command you can swap to using a different tool or learning more by understand Basic Linux Terminal Commands, links found at the bottom of the guide
 
-#### Downloading Files
-3. To get started with this tutorial, we want to download the project folder found on the HGV GitHub page. to start we need to go onto GitHub in a browser and navigate to this link here:  
+13. To get started with this tutorial, we want to download the project folder found on the HGV GitHub page. to start we need to go onto GitHub in a browser and navigate to this link here:  
 https://github.com/Heather-Glen-Village/HGV-Learning-Git
 
-4. From the page you want to click on the **Big Green Code** button which will show a drop down with a link but make sure the **HTTPS option is selected** before copying it.
+14. From the page you want to click on the **Big Green Code** button which will show a drop down with a link but make sure the **HTTPS option is selected** before copying it.
 ![Pasted image 20250323133233](https://github.com/user-attachments/assets/31014dba-0d82-4e10-90cc-cf234543805b)
 
 
-5. With the link copied, go back to your Terminal and copy the command below. this will download all the code from GitHub onto your Computer 
+15. With the link copied, go back to your Terminal and copy the command below. this will download all the code from GitHub onto your Computer 
 ```bash
 git clone https://your.copy.link.here.com
 ```
@@ -80,7 +125,7 @@ cd <Name of Folder>
 #### Swapping Branch
 Currently we only have the main branch downloaded which would be fine if we want to use the code but if we want to edit the code, we will want to be on the Feature Branch.
 
-6. Check all, already made branches on GitHub by running: 
+16. Check all, already made branches on GitHub by running: 
 ```bash
 git branch -a
 ```
@@ -93,7 +138,7 @@ This will output something like this:
 ```
 This shows all branch that are made, with the ones with remotes/ being ones from GitHub and the one with the * being the one we are currently using. 
 
-7. To start working we want to create a a new branch where you will work on all your changes. This new branch would be based on the dev branch already on GitHub. for the Name of the Branch, it should normally be made for the feature you're working on but for this Tutorial your name will work fine. 
+17. To start working we want to create a a new branch where you will work on all your changes. This new branch would be based on the dev branch already on GitHub. for the Name of the Branch, it should normally be made for the feature you're working on but for this Tutorial your name will work fine. 
 - To Create a Branch run this command with the <> replace with the name
 ```bash
 git switch -c <Your-Branch-Name> origin/dev
@@ -107,7 +152,7 @@ git switch -c <Your-Branch-Name> origin/dev
 git switch main
 ```
 
-8. Finally, before we can start working on your code you want to upload this new branch to GitHub for others to see/work on with different computers. This can be done by pushing your new branch onto the repository
+18. Finally, before we can start working on your code you want to upload this new branch to GitHub for others to see/work on with different computers. This can be done by pushing your new branch onto the repository
 ```bash
 git push -u origin <Your-Branch-Name>
 ```
@@ -118,19 +163,19 @@ Now if you check the GitHub on the left side the page there is a button to swap 
 #### Finally Coding
 Now with all of this setup done you can get to coding or in this case making an edit to a test python file. In the Repo there is a python file called Practice.py. 
 
-9. In this file there are Instructions for you to follow but basically you need to add something to this file that proves you made an edit to it. If you don't know any python that fine, just write a simple command such as:
+19. In this file there are Instructions for you to follow but basically you need to add something to this file that proves you made an edit to it. If you don't know any python that fine, just write a simple command such as:
 ```python
 print("My-Name")
 ```
 #### Saving and Uploading your Code
 When you are done adding what you to the Python file, you save it but that doesn't save it to Git. 
 
-10. For Git we need to check what files need to be save by running to show all un stage and stage file in Git.
+20. For Git we need to check what files need to be save by running to show all un stage and stage file in Git.
 ```bash
 git status
 ```
 
-11. To add a file to be committed you want to run this command
+21. To add a file to be committed you want to run this command
 ```bash
 git add <filename>
 ```
@@ -138,33 +183,33 @@ git add <filename>
 ```bash
 git add .
 ```
-12. Then to take these staged files and save them you want to run this command with a message explaining what changes you have made
+22. Then to take these staged files and save them you want to run this command with a message explaining what changes you have made
 ```bash
 git commit -m "<Change-Message-Goes-Here>"
 ```
-13. This will save all change you made so far locally but we also want to update the code on GitHub and that can be done by running:
+23. This will save all change you made so far locally but we also want to update the code on GitHub and that can be done by running:
 ```bash
 git push
 ```
 #### Merging Branches Together
 This step is only done when you are fully done using the branch you created due to the feature being completed. When a branch is done it can first be merge onto the dev branch and after a while, we have 100% clean working code, we merge dev into main.
 
-14. To start this, go onto GitHub and the Branches Page. There should be a Notification saying there has been a recent push and asking if you want to make a pull request. You want to click that green pull request button to enter the pull request page
+24. To start this, go onto GitHub and the Branches Page. There should be a Notification saying there has been a recent push and asking if you want to make a pull request. You want to click that green pull request button to enter the pull request page
 ![Pasted image 20250323143545](https://github.com/user-attachments/assets/e190b8a8-78cb-4d41-9b04-a6cb704e1d08)
 
-15. On this page you will document the changes you have made and tell GitHub to merge your branch into dev first. You can also fill out the labels and people you want to look at as well as the people that worked on the branch
+25. On this page you will document the changes you have made and tell GitHub to merge your branch into dev first. You can also fill out the labels and people you want to look at as well as the people that worked on the branch
 ![Pasted image 20250323143957](https://github.com/user-attachments/assets/4ec2e8a2-bd5f-4a9b-a982-afdbc356ee0c)
 
-16. When your done filling it out you can click the create pull request and if nothing goes wrong, on the next page you can merge the request yourself.
+26. When your done filling it out you can click the create pull request and if nothing goes wrong, on the next page you can merge the request yourself.
 
-17. After both branch have merge you can remove your old branch on GitHub by Clicking the Delete Branch Button on GitHub and running this command locally
+27. After both branch have merge you can remove your old branch on GitHub by Clicking the Delete Branch Button on GitHub and running this command locally
 ```bash
 git branch -d <Name-of-Branch>
 ```
 - -d mean delete
 (You can't be on the Branch you are delete so make sure to swap off it)
 
-18. Later when more features have been added you will do the same thing from dev to main but their will have been a review from someone before being added to main.
+28. Later when more features have been added you will do the same thing from dev to main but their will have been a review from someone before being added to main.
 #### Extra Things to Know
 While not needed for this guide here a few extra commands you should know while working with Git
 ##### git pull & git fetch
@@ -209,46 +254,62 @@ git merge --abort
 
 ### VS Code
 With VS Code there are many things that now can be done with its GUI but there also plenty that will need the use of a terminal which we can use the In-built on to help with.
-1. To get started with the VScode, you start by opening it and changing your directory change to wherever you want to storage your GitHub Projects. 
+#### Signing into GitHub
+Now before we start doing anything on Git, It would be a good idea to Link your GitHub account to Your Computer.
+
+1. First Before you Do anything Make Sure you Have Created a GitHub Account by Going to This Link: https://github.com/signup
+	- You can also use an account you made before to sign in.
+2. When you have finish setup up your account contact either Zach Schultz or Ken Taylor to add you to GitHub Organization so you can start Uploading code to the Repository
+3.  When the Invitation is sent you should be able to accept it via an link in your email or the GitHub Inbox
+4. You can See if your now apart of the Organization if you see all the User in the People Tab.
+
+#### Downloading Files
+5. To get started with the VScode, you start by opening it and changing your directory change to wherever you want to storage your GitHub Projects. 
 - For this Tutorial we presume you have a folder made in your home directory called "GitHub" made by pressing this to open file explorer and let you create a new folder
 ```
 Ctrl+k+o
 ```
-#### Downloading Files
-2. To get started with this tutorial, we want to download the project folder found on the HGV GitHub page. to start we need to go onto GitHub in a browser and navigate to this link here:  
+
+6. To get started with this tutorial, we want to download the project folder found on the HGV GitHub page. to start we need to go onto GitHub in a browser and navigate to this link here:  
 https://github.com/Heather-Glen-Village/HGV-Learning-Git
 
-3. From the page you want to click on the **Big Green Code** button which will show a drop down with a link but make sure the **HTTPS option is selected** before copying it.
+7. From the page you want to click on the **Big Green Code** button which will show a drop down with a link but make sure the **HTTPS option is selected** before copying it.
 ![Pasted image 20250323133233](https://github.com/user-attachments/assets/ce9c8854-832e-42bd-a853-6e2d4f4083c2)
 
-4. With the link copied, go back to your VScode, open your In-Built Terminal via the Terminal Tab on the top or with this Key combo:
+8. With the link copied, go back to your VScode, open your In-Built Terminal via the Terminal Tab on the top or with this Key combo:
 ![Pasted image 20250323152516](https://github.com/user-attachments/assets/0466b50a-d38e-44b1-9bfc-17ea7cc5c8cf)
 ```
 Ctrl+Shift+`
 ```
-5.  Copy the command below. This will download all the code from GitHub onto your Computer 
+9.  Copy the command below. This will download all the code from GitHub onto your Computer 
 ```bash
 git clone https://your.copy.link.here.com
 ```
 #### Swapping Branch
 Currently we only have the main branch downloaded which would be fine if we want to use the code but if we want to edit the code, we will want to be on the Feature Branch.
 
-6. First to See all the Branches go to the **bottom left** of the app and click on the Branch Icon
+10. First to See all the Branches go to the **bottom left** of the app and click on the Branch Icon
 ![Pasted image 20250323152743](https://github.com/user-attachments/assets/7c4db68b-3497-4779-a19a-0ac540ed7c65)
 - This shows all branches that are made with the ones with origin in first being ones from GitHub and the one being display next to the icon being the one we are on.
-7. To start working we want to create a a new branch where you will work on all your changes. This new branch would be based on the dev branch already on GitHub. For the name of the Branch, it should normally be made for the feature your working on but for this Tutorial your name will work fine. 
+
+11. To start working we want to create a a new branch where you will work on all your changes. This new branch would be based on the dev branch already on GitHub. For the name of the Branch, it should normally be made for the feature your working on but for this Tutorial your name will work fine. 
 ![Pasted image 20250323152934](https://github.com/user-attachments/assets/eb820ca9-e900-4759-a84d-6a89ebec928a)
 ![Pasted image 20250323153126](https://github.com/user-attachments/assets/d072c18d-8a44-4774-839e-b464cd2cbbdc)
 ![Pasted image 20250323153121](https://github.com/user-attachments/assets/df05683e-a48a-4166-8730-bf5bd9bf57e5)
+##### Linking your GitHub to VScode
+Now Before We Can Upload your Code back to GitHub you need to Link Vscode to GitHub
 
-8. Finally, before we can start working on your code you want to upload this new branch to GitHub for others to see/you to work on with different computers. This can be done by going to the Git Tab on the left and pressing the publish branch button
+12. When all Files are Commit there should be a prompt to Public Branch, Click it 
+
 ![Pasted image 20250323153333](https://github.com/user-attachments/assets/b30156e3-b644-4a0a-8b1b-7e5a7b745dfd)
+
+13.  This will prompt you to Log into GitHub using the Account you Made.
 
 Now if you check the GitHub on the left side the page there is a button to swap Branches and your should now be listed.
 #### Finally Coding
 Now with all of this setup done you can get to coding or in this case making an edit to a test python file. In the Repo there is a python file called Practice.py. 
 
-9. In this file there are Instructions for you to follow but basically you need to add something to this file that proves you made an edit to it. If you don't know any python that fine, just write a simple command such as:
+14. In this file there are Instructions for you to follow but basically you need to add something to this file that proves you made an edit to it. If you don't know any python that fine, just write a simple command such as:
 ```python
 print("My-Name")
 ```
@@ -256,35 +317,35 @@ print("My-Name")
 #### Saving and Uploading your Code
 When you are done adding what you to the Python file, you save it but that doesn't save it to Git. 
 
-10. For Git we need to check what files need to be save by running to show all un staged and staged file in Git which can be found listed on the Git Tab on the left
+15. For Git we need to check what files need to be save by running to show all un staged and staged file in Git which can be found listed on the Git Tab on the left
 ![Pasted image 20250323153537](https://github.com/user-attachments/assets/f309187e-40ce-4dd2-9f3b-5fa9766ed4d0)
 
-11. To add a file to be save you want to click the stage changes button next to the file or the stage all changes button next to the changes tab
+16. To add a file to be save you want to click the stage changes button next to the file or the stage all changes button next to the changes tab
 
-12. Then to take these staged files and save them you want to write a message explaining what changes you have made then press the Commit Button
+17. Then to take these staged files and save them you want to write a message explaining what changes you have made then press the Commit Button
 
 ![Pasted image 20250323153721](https://github.com/user-attachments/assets/89fe9305-7d8a-43d0-919f-a531e898f2bd)
 
-13. This will save all change you made so far locally but we also want to update the code on GitHub and that can be done by pressing the Push Button where the Commit one used to be
+18. This will save all change you made so far locally but we also want to update the code on GitHub and that can be done by pressing the Push Button where the Commit one used to be
 ![Pasted image 20250323153820](https://github.com/user-attachments/assets/0a90fcd0-1289-47ac-8d2c-492d40cd2fe8)
 #### Merging Branches Together
 This step is only done when you are fully done using the branch you created due to the feature being completed. When a branch is done it can first be merge onto the dev branch and after a while, we have 100% clean working code, we merge dev into main.
 
-14. To start this, go onto GitHub and the Branches Page. There should be a Notification saying there has been a recent push and asking if you want to make a pull request. You want to click that green pull request button to enter the pull request page
+19. To start this, go onto GitHub and the Branches Page. There should be a Notification saying there has been a recent push and asking if you want to make a pull request. You want to click that green pull request button to enter the pull request page
 ![Pasted image 20250323143545](https://github.com/user-attachments/assets/e207e2ac-b195-4f4f-b2a5-1949579348fe)
 
-15. On this page you will document the changes you have made and tell GitHub to merge your branch into dev first. You can also fill out the labels and people you want to look at as well as the people that worked on the branch
+20. On this page you will document the changes you have made and tell GitHub to merge your branch into dev first. You can also fill out the labels and people you want to look at as well as the people that worked on the branch
 ![Pasted image 20250323143957](https://github.com/user-attachments/assets/efc75358-99a6-4b8e-a6ee-cf78cfd70057)
 
-16. When your done filling it out you can click the create pull request and if nothing goes wrong, on the next page you can merge the request yourself.
+21. When your done filling it out you can click the create pull request and if nothing goes wrong, on the next page you can merge the request yourself.
 
-17.  After both branch have merge you can remove your old branch on GitHub by Clicking the Delete Branch Button on GitHub and running this command locally
+22.  After both branch have merge you can remove your old branch on GitHub by Clicking the Delete Branch Button on GitHub and running this command locally
 ```bash
 git branch -d <Name-of-Branch>
 ```
 (You can't be on the Branch you are delete so make sure to swap off it)
 
-18. Later when more features have been added you will do the same thing from dev to main but their will have been a review from someone before being added to main.
+23. Later when more features have been added you will do the same thing from dev to main but their will have been a review from someone before being added to main.
 #### Extra Things to Know
 While not needed for this guide here a few extra commands you should know while working with Git
 ##### git pull & git fetch
