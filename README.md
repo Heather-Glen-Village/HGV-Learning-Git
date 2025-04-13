@@ -289,13 +289,18 @@ git clone https://your.copy.link.here.com
 Currently we only have the main branch downloaded which would be fine if we want to use the code but if we want to edit the code, we will want to be on the Feature Branch.
 
 10. First to See all the Branches go to the **bottom left** of the app and click on the Branch Icon
+
 ![Pasted image 20250323152743](https://github.com/user-attachments/assets/7c4db68b-3497-4779-a19a-0ac540ed7c65)
 - This shows all branches that are made with the ones with origin in first being ones from GitHub and the one being display next to the icon being the one we are on.
 
 11. To start working we want to create a a new branch where you will work on all your changes. This new branch would be based on the dev branch already on GitHub. For the name of the Branch, it should normally be made for the feature your working on but for this Tutorial your name will work fine. 
+
 ![Pasted image 20250323152934](https://github.com/user-attachments/assets/eb820ca9-e900-4759-a84d-6a89ebec928a)
+
 ![Pasted image 20250323153126](https://github.com/user-attachments/assets/d072c18d-8a44-4774-839e-b464cd2cbbdc)
+
 ![Pasted image 20250323153121](https://github.com/user-attachments/assets/df05683e-a48a-4166-8730-bf5bd9bf57e5)
+
 ##### Linking your GitHub to VScode
 Now Before We Can Upload your Code back to GitHub you need to Link Vscode to GitHub
 
@@ -318,6 +323,7 @@ print("My-Name")
 When you are done adding what you to the Python file, you save it but that doesn't save it to Git. 
 
 15. For Git we need to check what files need to be save by running to show all un staged and staged file in Git which can be found listed on the Git Tab on the left
+
 ![Pasted image 20250323153537](https://github.com/user-attachments/assets/f309187e-40ce-4dd2-9f3b-5fa9766ed4d0)
 
 16. To add a file to be save you want to click the stage changes button next to the file or the stage all changes button next to the changes tab
@@ -327,14 +333,18 @@ When you are done adding what you to the Python file, you save it but that doesn
 ![Pasted image 20250323153721](https://github.com/user-attachments/assets/89fe9305-7d8a-43d0-919f-a531e898f2bd)
 
 18. This will save all change you made so far locally but we also want to update the code on GitHub and that can be done by pressing the Push Button where the Commit one used to be
+
 ![Pasted image 20250323153820](https://github.com/user-attachments/assets/0a90fcd0-1289-47ac-8d2c-492d40cd2fe8)
+
 #### Merging Branches Together
 This step is only done when you are fully done using the branch you created due to the feature being completed. When a branch is done it can first be merge onto the dev branch and after a while, we have 100% clean working code, we merge dev into main.
 
 19. To start this, go onto GitHub and the Branches Page. There should be a Notification saying there has been a recent push and asking if you want to make a pull request. You want to click that green pull request button to enter the pull request page
+
 ![Pasted image 20250323143545](https://github.com/user-attachments/assets/e207e2ac-b195-4f4f-b2a5-1949579348fe)
 
 20. On this page you will document the changes you have made and tell GitHub to merge your branch into dev first. You can also fill out the labels and people you want to look at as well as the people that worked on the branch
+
 ![Pasted image 20250323143957](https://github.com/user-attachments/assets/efc75358-99a6-4b8e-a6ee-cf78cfd70057)
 
 21. When your done filling it out you can click the create pull request and if nothing goes wrong, on the next page you can merge the request yourself.
@@ -350,14 +360,18 @@ git branch -d <Name-of-Branch>
 While not needed for this guide here a few extra commands you should know while working with Git
 ##### git pull & git fetch
 Both of these commands do very similar stuff which is to update your local file with any changes made using a different device and were uploaded to GitHub. Luckily VS Code makes this really easy for us running git fetch every few minutes and replacing the Push/Commit Button with a Pull Button when a change has been made on GitHub. 
+
 ![Pasted image 20250323154334](https://github.com/user-attachments/assets/5daf16b9-1a01-4a0d-8125-6c45d685196b)
+
 This will download any changed made as long as you don't have non saved files and they don't Your conflict. Sometimes the button won't show up after a change in that case run this command in the terminal to fix it
 ```bash
 git fetch
 ```
 ##### Going back to Older Commits
 There are a few ways to do this but the way I would recommend is first find the commit you wish to go back to on via looking at the graph found on VS code. you can click on different part to see that changes that were made
+
 ![Pasted image 20250323154555](https://github.com/user-attachments/assets/fa7b3643-4167-4bfb-b24b-5a2d18ed085c)
+
 from here there is a list of all commits made and each have a hash related to them (They look like this 62c4319).  you can turn the current branch that you have back in time using this command 
 ```bash
 git revert <hash>
@@ -365,12 +379,16 @@ git revert <hash>
 This will most likely cause some Merge conflict that you need to solve.
 
 You can also just click on the create new Branch button which will Make a new Branch with the code from that Commit
+
 ![Pasted image 20250323154724](https://github.com/user-attachments/assets/e55ee7e3-cf1d-47a6-92f5-ceead389ef00)
+
 ##### Merge Conflicts
 - Happens when you try to do a git pull or when merging your branch into dev/main where the files have one line of code in one branch but another in a different branch. 
 - Normally Git can handle most of these issues but sometimes they show up while working. You know when you’re dealing with a merge issue when the Terminal tells you a conflict has occurred. 
 - When you have found the issue VS code will give you some option to pick from being keep the Current, Accept Incoming Change, Accept Both Changes. Pick whatever would work the best and when your done just stage the files and commit it back to GitHub
+
 ![Pasted image 20250323154921](https://github.com/user-attachments/assets/ba5570d2-b797-40b2-9451-637e64ec776f)
+
  If you Accidentally caused a merge conflict and don't want to deal with it or know how do just remember you can run This command to undo the merge
 ```bash
 git merge --abort 
