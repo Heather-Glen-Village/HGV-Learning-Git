@@ -75,7 +75,7 @@ Now that you have an Ready GitHub Account, you still need to link it to your com
 
 8. The Token should have a Easily understood Name like (REMS006 Token) an Expiration Date for when you stop using the device, and let it access all Repo
 
-9. Generate the token and copy it and save it until Step XX.
+9. Generate the token and copy it and save it until Step 18.
 
 #### Setup Git
 Lastly before we start using Git, there are some Global Config that you will want to set before using Git
@@ -152,12 +152,16 @@ git switch -c <Your-Branch-Name> origin/dev
 git switch main
 ```
 
-18. Finally, before we can start working on your code you want to upload this new branch to GitHub for others to see/work on with different computers. This can be done by pushing your new branch onto the repository
+18. Finally, before we can start working on your code you want to upload this new branch to GitHub for others to see/work on with different computers. This can be done by pushing your new branch onto the repository. 
+
+- **NOTE** If this is your first Push it will ask you for your Username and Passowrd. This should be your GitHub Username and GitHub **Token** from Step 9 not Password)
+- Your Password will also not Display so but while it shows your Not Typing anything, you are Inputing the Password.
 ```bash
 git push -u origin <Your-Branch-Name>
 ```
 - -u tells Git to Link the GitHub Branch with this one
 - Origin tells it to put the Branch on GitHub
+
 
 Now if you check the GitHub on the left side the page there is a button to swap Branches and your should now be listed.
 #### Finally Coding
