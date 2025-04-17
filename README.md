@@ -15,7 +15,7 @@ The **Dev Branch** is the 2nd branch and is where most of the development takes 
 ### Main Branch
 **Main Branch** is the final branch that stores 100% working code and shouldn't have any half finish parts in it. The idea is that if we want to test code with a new set of hardware, we will use code from main branch as we know it will work without any error. The only thing that can edit main is by merging Dev Branch into it but unlike dev where you can make any merge whenever you finish working on your Feature Branch, merging into **Main requires someone to look over the code before letting the merge happen.**
 ## How to Use Git
-First Before we Use Git, we need to download it and then download other GUI or Tools we want to use. In this Guide we will be using just **Base Git** and then **VScode**, but you are free to use any Git GUI you Like.
+First Before we Use Git, we need to download it and then download other GUI or Tools we want to use. In this Guide we will be using just **Base Git**  + **Github CLI** or **VScode**, but you are free to use any Git GUI you Like.
 ### Needed Software
 #### Git
 Is a Terminal Program that lets you use Git via the Terminal and should be auto installed on almost every PC. However, if you want to make sure you have it installed or up to date follow these steps based on your OS
@@ -37,7 +37,27 @@ work for Linux system that has the apt package installer Like Ubuntu or Debian
 ``` bash
 sudo apt install git-all
 ```
+- it will prompt for your password and then ask to confirm the download by pressing y then enter
+#### GitHub CLI
+- This is another Terminal Tool that is needed to Link your computer to GitHub using the Terminal. There are many other feature to this program but we just use this one for now
+##### How to Install
+- Setup for all can be found here  https://github.com/cli/cli#installation
+###### Windows
+- The easiest way to Install is  from the MSI file found on the website
+https://cli.github.com/
+- you can also Use any Terminal downloader if you have one.
+###### Mac
+- The easiest way to Install is  from the Pkg  file found on the website
+https://cli.github.com/
+- You can also Use any Terminal Downloader like brew
+###### Ubuntu/Debian/REMS PC
+- Use this command into a Terminal
 
+```bash
+sudo apt install gh
+```
+
+- it will prompt for your password and then ask to confirm the download by pressing y then enter
 #### VScode
 A coding IDE that has inbuilt Git usage and can be used for both the writing of code and the use of Git.
 ##### How to Install
@@ -62,25 +82,11 @@ Now before we start doing anything on Git, It would be a good idea to Link your 
 3.  When the Invitation is sent you should be able to accept it via an link in your email or the GitHub Inbox
 
 4. You can See if your now apart of the Organization if you see all the User in the People Tab.
-
-##### Linking your GitHub to Git
-
-Now that you have an Ready GitHub Account, you still need to link it to your computer that you are using with a Personal Access Token
-
-5.  To Get your Personal Access Token, go onto GitHub and into Setting by clicking onto your icon in the Top Right.
-
-6. From here Scroll all the way down to Developer Settings, Click it then Click Personal Access tokens and then Fine-grained tokens
-
-7. Click the Green Generate new token and create a token with the access it should give
-
-8. The Token should have a Easily understood Name like (REMS006 Token) an Expiration Date for when you stop using the device, and let it access all Repo
-
-9. Generate the token and copy it and save it until Step 18.
-
 #### Setup Git
-Lastly before we start using Git, there are some Global Config that you will want to set before using Git
+Before we start using Git, there are some Global Config that you will want to set before using Git
 
-10. Copy and Paste this info into a Terminal  and replace <> with the right info 
+5. Copy and Paste this info into a Terminal  and replace <> with the right info 
+
 
 ```bash
 git config --global user.name "<GitHub Name>" 
@@ -93,28 +99,46 @@ git config --global credential.helper store
 - init.defaultBranch  set the name to the default Branch name to "main"
 - credential.helper store make it remember your token and not have to paste it in every time you use it.
 	- If you don't feel comfortable using these command you can swap to using a different tool or learning more by understand Basic Linux Terminal Commands, links found at the bottom of the guide
+##### Linking your GitHub to Git
+Now that you have an Ready Git and an GitHub Account, you still need to link it to your computer that you are using with a the GitHub CLI
 
+6. With the GitHub CLI install, enter this command into Terminal
+
+```bash
+gh auth login
+```
+
+7. This will begin the setup processes where it will ask for how you would like to set it up, follow the Selected options below
+> What account do you want to log into
+-  Github.com
+> What is your preferred protocol for Git Operations?
+- HTTPS
+> How Would you like to authenticate GitHub CLI
+- Login with a web browser
+
+8. Now you should see a message with a one time code, copy that and then press enter which should open up
+9. Log into your GitHub Account and enter that code and now they are connected
 #### Downloading Files
 Now that we are fully log into GitHub we can start using the Code on the Repositories.
 
-11. To get started with the basic Git program, you start by opening a Terminal page and changing your directory to wherever you want to store your GitHub Projects. 
+10. To get started with the basic Git program, you start by opening a Terminal page and changing your directory to wherever you want to store your GitHub Projects. 
 - For this tutorial we will presume you have a folder made in your home directory called "GitHub" made by running this command in Linux:
 ``` bash
 mkdir GitHub
 ```
-12. Then running this command to change your directory into that folder
+11. Then running this command to change your directory into that folder
 ``` bash
 cd Github
 ```
 
-13. To get started with this tutorial, we want to download the project folder found on the HGV GitHub page. to start we need to go onto GitHub in a browser and navigate to this link here:  
+12. To get started with this tutorial, we want to download the project folder found on the HGV GitHub page. to start we need to go onto GitHub in a browser and navigate to this link here:  
 https://github.com/Heather-Glen-Village/HGV-Learning-Git
 
-14. From the page you want to click on the **Big Green Code** button which will show a drop down with a link but make sure the **HTTPS option is selected** before copying it.
+13. From the page you want to click on the **Big Green Code** button which will show a drop down with a link but make sure the **HTTPS option is selected** before copying it.
 ![Pasted image 20250323133233](https://github.com/user-attachments/assets/31014dba-0d82-4e10-90cc-cf234543805b)
 
 
-15. With the link copied, go back to your Terminal and copy the command below. this will download all the code from GitHub onto your Computer 
+14. With the link copied, go back to your Terminal and copy the command below. this will download all the code from GitHub onto your Computer 
 ```bash
 git clone https://your.copy.link.here.com
 ```
@@ -125,7 +149,7 @@ cd <Name of Folder>
 #### Swapping Branch
 Currently we only have the main branch downloaded which would be fine if we want to use the code but if we want to edit the code, we will want to be on the Feature Branch.
 
-16. Check all, already made branches on GitHub by running: 
+15. Check all, already made branches on GitHub by running: 
 ```bash
 git branch -a
 ```
@@ -138,7 +162,7 @@ This will output something like this:
 ```
 This shows all branch that are made, with the ones with remotes/ being ones from GitHub and the one with the * being the one we are currently using. 
 
-17. To start working we want to create a a new branch where you will work on all your changes. This new branch would be based on the dev branch already on GitHub. for the Name of the Branch, it should normally be made for the feature you're working on but for this Tutorial your name will work fine. 
+16. To start working we want to create a a new branch where you will work on all your changes. This new branch would be based on the dev branch already on GitHub. for the Name of the Branch, it should normally be made for the feature you're working on but for this Tutorial your name will work fine. 
 - To Create a Branch run this command with the <> replace with the name
 ```bash
 git switch -c <Your-Branch-Name> origin/dev
@@ -152,34 +176,30 @@ git switch -c <Your-Branch-Name> origin/dev
 git switch main
 ```
 
-18. Finally, before we can start working on your code you want to upload this new branch to GitHub for others to see/work on with different computers. This can be done by pushing your new branch onto the repository. 
-
-- **NOTE** If this is your first Push it will ask you for your Username and Passowrd. This should be your GitHub Username and GitHub **Token** from Step 9 not Password)
-- Your Password will also not Display so but while it shows your Not Typing anything, you are Inputing the Password.
+17. Finally, before we can start working on your code you want to upload this new branch to GitHub for others to see/work on with different computers. This can be done by pushing your new branch onto the repository
 ```bash
 git push -u origin <Your-Branch-Name>
 ```
 - -u tells Git to Link the GitHub Branch with this one
 - Origin tells it to put the Branch on GitHub
 
-
 Now if you check the GitHub on the left side the page there is a button to swap Branches and your should now be listed.
 #### Finally Coding
 Now with all of this setup done you can get to coding or in this case making an edit to a test python file. In the Repo there is a python file called Practice.py. 
 
-19. In this file there are Instructions for you to follow but basically you need to add something to this file that proves you made an edit to it. If you don't know any python that fine, just write a simple command such as:
+18. In this file there are Instructions for you to follow but basically you need to add something to this file that proves you made an edit to it. If you don't know any python that fine, just write a simple command such as:
 ```python
 print("My-Name")
 ```
 #### Saving and Uploading your Code
 When you are done adding what you to the Python file, you save it but that doesn't save it to Git. 
 
-20. For Git we need to check what files need to be save by running to show all un stage and stage file in Git.
+19. For Git we need to check what files need to be save by running to show all un stage and stage file in Git.
 ```bash
 git status
 ```
 
-21. To add a file to be committed you want to run this command
+20. To add a file to be committed you want to run this command
 ```bash
 git add <filename>
 ```
@@ -187,33 +207,33 @@ git add <filename>
 ```bash
 git add .
 ```
-22. Then to take these staged files and save them you want to run this command with a message explaining what changes you have made
+21. Then to take these staged files and save them you want to run this command with a message explaining what changes you have made
 ```bash
 git commit -m "<Change-Message-Goes-Here>"
 ```
-23. This will save all change you made so far locally but we also want to update the code on GitHub and that can be done by running:
+22. This will save all change you made so far locally but we also want to update the code on GitHub and that can be done by running:
 ```bash
 git push
 ```
 #### Merging Branches Together
 This step is only done when you are fully done using the branch you created due to the feature being completed. When a branch is done it can first be merge onto the dev branch and after a while, we have 100% clean working code, we merge dev into main.
 
-24. To start this, go onto GitHub and the Branches Page. There should be a Notification saying there has been a recent push and asking if you want to make a pull request. You want to click that green pull request button to enter the pull request page
+23. To start this, go onto GitHub and the Branches Page. There should be a Notification saying there has been a recent push and asking if you want to make a pull request. You want to click that green pull request button to enter the pull request page
 ![Pasted image 20250323143545](https://github.com/user-attachments/assets/e190b8a8-78cb-4d41-9b04-a6cb704e1d08)
 
-25. On this page you will document the changes you have made and tell GitHub to merge your branch into dev first. You can also fill out the labels and people you want to look at as well as the people that worked on the branch
+24. On this page you will document the changes you have made and tell GitHub to merge your branch into dev first. You can also fill out the labels and people you want to look at as well as the people that worked on the branch
 ![Pasted image 20250323143957](https://github.com/user-attachments/assets/4ec2e8a2-bd5f-4a9b-a982-afdbc356ee0c)
 
-26. When your done filling it out you can click the create pull request and if nothing goes wrong, on the next page you can merge the request yourself.
+25. When your done filling it out you can click the create pull request and if nothing goes wrong, on the next page you can merge the request yourself.
 
-27. After both branch have merge you can remove your old branch on GitHub by Clicking the Delete Branch Button on GitHub and running this command locally
+26. After both branch have merge you can remove your old branch on GitHub by Clicking the Delete Branch Button on GitHub and running this command locally
 ```bash
 git branch -d <Name-of-Branch>
 ```
 - -d mean delete
 (You can't be on the Branch you are delete so make sure to swap off it)
 
-28. Later when more features have been added you will do the same thing from dev to main but their will have been a review from someone before being added to main.
+27. Later when more features have been added you will do the same thing from dev to main but their will have been a review from someone before being added to main.
 #### Extra Things to Know
 While not needed for this guide here a few extra commands you should know while working with Git
 ##### git pull & git fetch
