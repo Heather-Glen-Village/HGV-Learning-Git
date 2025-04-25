@@ -222,6 +222,9 @@ git push -u origin <Your-Branch-Name>
 - Origin tells it to put the Branch on GitHub
 
 Now if you check the GitHub on the left side the page there is a button to swap Branches and your should now be listed.
+
+![image](https://github.com/user-attachments/assets/fcd9e6a0-66bd-44d7-8f00-7d66a35b9962)
+
 #### Finally Coding
 Now with all of this setup done you can get to coding or in this case making an edit to a test python file. In the Repo there is a python file called Practice.py. 
 
@@ -373,6 +376,9 @@ Now Before We Can Upload your Code back to GitHub you need to Link Vscode to Git
 13.  This will prompt you to Log into GitHub using the Account you Made.
 
 Now if you check the GitHub on the left side the page there is a button to swap Branches and your should now be listed.
+
+![image](https://github.com/user-attachments/assets/fcd9e6a0-66bd-44d7-8f00-7d66a35b9962)
+
 #### Finally Coding
 Now with all of this setup done you can get to coding or in this case making an edit to a test python file. In the Repo there is a python file called Practice.py. 
 
