@@ -1,6 +1,45 @@
 # HGV Learning Git
 **Git** is a very widely used Software that when combined with **GitHub** is one of, if not the most used Software in Software Development. This Guide will explain how to use both Git and GitHub in the context of the HGV Project and its GitHub Organization and will be **split into 2 parts**. The 1st half will explain what Git and GitHub are and why we use it while the 2nd half will just guide you on how to use these tools with a step by step guide on how to use the basic function of Git using either the Terminal or VScode.
+##### Note for People that Don't want to Read
+There are Video guide at the bottom for you to follow. While they are more general and don't cover the specifics way that the repositories are structured in this project, They are all very good  guides you can use that will help you learn these tool and can still apply to our GitHub repositories
 
+## Table of Contents  
+[test](#hgv-learning-git)
+- [What is Git?](#what-is-git)  
+	- [What is GitHub?](#what-is-github) 
+- [HGV Workflow](#hgv-workflow) 
+	- [Feature Branch](### Feature Branch)  
+	- [Dev Branch](## Dev Branch)  
+	- [Main Branch](## Main Branch)  
+- [How to Use Git](## How to Use Git) 
+	- [Needed Software](### Needed Software) 
+		-  [Git](#### Git)
+		-  [GitHub CLI](#### GitHub CLI)
+		- [VScode](#### VScode)
+- [The Git & GitHub Tutorial](## The Git & GitHub Tutorial)
+	- [Basic Git](### Basic Git)
+		- [Signing into GitHub](#### Signing into GitHub)
+		- [Setup Git](#### Setup Git)
+		- [Linking your GitHub to Git](#### Linking your GitHub to Git)
+		- [Downloading Files](#### Downloading Files)
+		- [Swapping Branch](#### Swapping Branch)
+		- [Finally Coding](#### Finally Coding)
+		- [Saving and Uploading your Code](#### Saving and Uploading your Code)
+		- [Merging Branches Together](#### Merging Branches Together)
+		- [Extra Things to Know](#### Extra Things to Know) 
+	- [VS Code](### VS Code)
+		- [Signing into GitHub](#### Signing into GitHub)
+		- [Downloading Files](#### Downloading Files)
+		- [Swapping Branch](#### Swapping Branch)
+		- [Linking your GitHub to VScode](#### Linking your GitHub to VScode)
+		- [Finally Coding](#### Finally Coding)
+		- [Saving and Uploading your Code](#### Saving and Uploading your Code)
+		- [Merging Branches Together](#### Merging Branches Together)
+		- [Extra Things to Know](#### Extra Things to Know) 
+- [Extra Sources](## Extra Sources)
+	- [Basic of Git](### Basic of Git)
+	- [Advanced Git](### Advanced Git)
+	- [Other](### Other)
 ## What is Git?
 If you ever used Google Docs, on the top right you can find a clock icon which will open version history. This feature lets you go back to older versions as well see who wrote what parts. **Git is this version history in Google Docs** but for code and other files. The most basic use of Git is to Commit Files to a Repository (Which is just a place that stores changes made to the file), then whenever you have to go back to a change you can revert to it or just copy what you need. This allows protection on code making it harder to lose code as you can always go back and also branch off your code into different features and help focus your code. Git is pre-installed on almost every computer and is used in every major tech company. The only major downside of Git is sharing the code as it’s only stored on your machine but that's where GitHub comes in.
 ### What is GitHub?
@@ -15,7 +54,7 @@ The **Dev Branch** is the 2nd branch and is where most of the development takes 
 ### Main Branch
 **Main Branch** is the final branch that stores 100% working code and shouldn't have any half finish parts in it. The idea is that if we want to test code with a new set of hardware, we will use code from main branch as we know it will work without any error. The only thing that can edit main is by merging Dev Branch into it but unlike dev where you can make any merge whenever you finish working on your Feature Branch, merging into **Main requires someone to look over the code before letting the merge happen.**
 ## How to Use Git
-First Before we Use Git, we need to download it and then download other GUI or Tools we want to use. In this Guide we will be using just **Base Git**  + **Github CLI** or **VScode**, but you are free to use any Git GUI you Like.
+First Before we Use Git, we need to download it and then download other GUI or Tools we want to use. In this Guide we will be using just **Base Git**  + **GitHub CLI** or **VScode**, but you are free to use any Git GUI you Like.
 ### Needed Software
 #### Git
 Is a Terminal Program that lets you use Git via the Terminal and should be auto installed on almost every PC. However, if you want to make sure you have it installed or up to date follow these steps based on your OS
@@ -325,7 +364,7 @@ Currently we only have the main branch downloaded which would be fine if we want
 
 ![Pasted image 20250323153121](https://github.com/user-attachments/assets/df05683e-a48a-4166-8730-bf5bd9bf57e5)
 
-##### Linking your GitHub to VScode
+#### Linking your GitHub to VScode
 Now Before We Can Upload your Code back to GitHub you need to Link Vscode to GitHub
 
 12. When all Files are Commit there should be a prompt to Public Branch, Click it 
@@ -429,4 +468,4 @@ Unfortunately this guide can't cover everything and a written guide may not work
 - Ihatetomatoes, How to Resolve Merge Conflicts (6:35) https://www.youtube.com/watch?v=xNVM5UxlFSA
 - SuperSimpleDev, Git Branching and Merging (54:27) https://www.youtube.com/watch?v=Q1kHG842HoI
 ### Other
-- SavvyNik, Basic Linux Terminal (7:33) https://www.youtube.com/watch?v=jgcXclSXnVo
+- SavvyNik, Basic Linux Terminal (7:33) https://www.youtube.com/watch?v=jgcXclSXnVo](<# HGV Learning Git
