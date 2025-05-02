@@ -55,6 +55,10 @@ The **Dev Branch** is the 2nd branch and is where most of the development takes 
 ## How to Use Git
 First Before we Use Git, we need to download it and then download other GUI or Tools we want to use. In this Guide we will be using just **Base Git**  + **GitHub CLI** or **VScode**, but you are free to use any Git GUI you Like.
 ### Needed Software
+Note Before you do any downloading on the REMS PC, make sure to update your repository 
+``` bash
+sudo apt update
+```
 #### Git
 Is a Terminal Program that lets you use Git via the Terminal and should be auto installed on almost every PC. However, if you want to make sure you have it installed or up to date follow these steps based on your OS
 
